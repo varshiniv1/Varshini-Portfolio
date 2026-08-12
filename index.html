@@ -427,6 +427,27 @@ footer{
   <h2>Projects</h2>
   <div class="cards">
 
+    <!-- Penny: replace .mock-name below with <img src="images/penny.png" alt="Penny"> once the screenshot is added -->
+    <article class="card proj-card full">
+      <div class="mock"><div class="mock-name">Penny — AI-Powered Personal Finance Agent</div></div>
+      <div class="proj-body">
+      <h3>Penny — AI-Powered Personal Finance Agent</h3>
+      <p>
+        • Designed and built a privacy-first personal finance agent that parses bank/credit-card statements — text and scanned PDFs, images, CSV — into a queryable transaction ledger with zero server-side data persistence.<br>
+        • Built a multi-tool agentic chat assistant on Claude's tool-use API (SQL generation, full-text search, dynamic charting, code execution, web search), correctly handling parallel and multi-step tool calls with accurate conversation-state reconstruction across turns.<br>
+        • Implemented agent-to-agent delegation: the primary chat agent dispatches ambiguous merchant-categorization requests to an independent sub-agent with its own scoped system prompt and fresh context window, persisting results back to the shared ledger.<br>
+        • Exposed the app's query/search capabilities as a standards-compliant MCP server (stdio transport), letting any MCP client — Claude Desktop, Claude Code — query personal financial data independent of the web UI.<br>
+        • Integrated Anthropic's Excel-export Agent Skill via the code-execution container for on-demand formatted spending reports, conditionally enabled per-turn (keyword-gated) to avoid paying for it on unrelated messages.<br>
+        • Diagnosed and fixed critical silent-failure bugs in the statement-parsing pipeline — a date-format gap causing 100% extraction failure and an inverted debit/credit sign convention — restoring correct parsing across real bank statement formats.<br>
+        • Reduced LLM cost and latency via prompt caching (system instructions + growing conversation history), batched merchant lookups (dozens of sequential calls → one), and a capped/aggregate-first SQL tool; built a token-usage and cost dashboard with per-operation breakdown, gated behind an admin-only secret token.
+      </p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">DuckDB</span><span class="tag">Claude API</span><span class="tag">Tool Use</span><span class="tag">MCP</span><span class="tag">Sub-Agents</span><span class="tag">Agent Skills</span><span class="tag">Plotly</span></div>
+      <div class="plinks">
+        <a href="https://github.com/varshiniv1/Penny-Finance-Agent" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      </div>
+    </article>
+
     <!-- VaultFlow -->
     <article class="card proj-card">
       <div class="mock"><img src="images/vaultflow.png" alt="VaultFlow"></div>
