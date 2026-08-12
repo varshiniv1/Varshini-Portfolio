@@ -158,6 +158,12 @@ nav a:hover{color:var(--accent)}
 /* MOCK */
 .mock{background:var(--bg-2);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.9rem}
 .mock svg{display:block;width:100%;height:auto}
+.mock img{display:block;width:100%;height:100%;object-fit:cover}
+.mock-name{
+  aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
+  background:var(--card-2);color:var(--muted);font-family:var(--mono);
+  font-size:.95rem;font-weight:600;letter-spacing:.3px;
+}
 /* SKILLS */
 .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.6rem;text-align:left}
 .skill-cat-label{
@@ -234,7 +240,7 @@ nav a:hover{color:var(--accent)}
 .socials a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 footer{
   border-top:1px solid var(--border);padding:1.8rem 0;color:var(--muted);font-size:.85rem;
-  font-family:var(--mono);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;
+  font-family:var(--mono);display:flex;justify-content:center;flex-wrap:wrap;gap:.6rem;text-align:center;
   max-width:1080px;margin:0 auto;padding-left:1.4rem;padding-right:1.4rem;
 }
 /* ANIMATE */
@@ -297,7 +303,7 @@ footer{
 <section id="about" class="section">
 <div class="container" data-animate>
   <h2>About Me</h2>
-  <p class="about-text">I'm a Full-Stack Developer and recent MSCS graduate from UMass Amherst (GPA: 3.81/4.0) with a track record of shipping production-grade software. I've built microservices platforms with Kafka and Spring Boot, AI-integrated applications deployed in the cloud, and real-time event systems — all in live codebases. Alongside that, I'm building an LLM-as-a-Judge framework for cybersecurity at UMass Amherst and have published an IEEE paper on deep learning. I'm actively seeking full-time Software Engineering roles and available to start immediately.</p>
+  <p class="about-text">I'm a Full-Stack Software Engineer finishing my MS in Computer Science at UMass Amherst (GPA: 3.81/4.0), and I build systems that hold up under real load — not just demos. At Lillup, I closed out a Next.js app's security gaps (session auth, CSP/HSTS) and built a 5-job CI pipeline gating every PR on ~90% test coverage. As an extern with UMass Amherst and IBM, I curated a 162K-pair cybersecurity benchmark and fine-tuned LLaMA-3.2-3B with LoRA to improve LLM-judge alignment against human experts. On my own time, I've shipped a banking microservices platform validated at 100% success under Gatling load tests and a ticketing platform load-tested to 1,306 req/s with zero errors across 260K requests — both running Spring Boot, Next.js, and Kafka. I work fluently across Java, TypeScript, and Python, I'm comfortable with Claude Code and agentic workflows, and I'm IEEE-published in deep learning. I'm actively interviewing for full-time Software Engineering roles and available to start immediately.</p>
 </div>
 </section>
 
@@ -334,32 +340,31 @@ footer{
   <div class="exp-item">
     <h3>Software Engineering Intern</h3>
     <h4>Lillup</h4>
-    <span class="meta">Feb 2026 – Apr 2026 · Remote, United States</span>
+    <span class="meta">Feb 2026 – Apr 2026</span>
     <p>
-      • Designed and implemented scalable full-stack features using React and Spring Boot, with a focus on clean architecture and performance.<br>
-      • Collaborated with product and design teams to deliver production-ready solutions aligned with business requirements.<br>
-      • Improved code quality and system reliability through modular design patterns and consistent documentation standards.
+      • Built session-based authentication, output sanitization, and a CSP/HSTS security baseline for a Next.js/TypeScript app. Resolved two SSR-breaking production bugs by tracing server stack traces to a sanitizer environment mismatch and a webpack bundling conflict.<br>
+      • Built a 5-job CI pipeline (Jest, Cypress, Lighthouse CI, Pa11y) with ~90% test coverage. Gated every pull request on performance and accessibility budgets.
     </p>
   </div>
 
   <div class="exp-item">
     <h3>Extern — Industry Mentorship Program</h3>
-    <h4>UMass Amherst</h4>
-    <span class="meta">Jan 2026 – Present · Remote, United States</span>
+    <h4>University of Massachusetts Amherst · IBM</h4>
+    <span class="meta">Jan 2026 – May 2026 · Remote, United States</span>
     <p>
-      • Building a domain-specific LLM-as-a-Judge framework for cybersecurity, targeting prompt injection, jailbreak attacks, vulnerable code detection, and threat intelligence evaluation.
-      <a href="https://github.com/varshiniv1/llm-as-judge" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">[GitHub]</a><br>
-      • Analyzing and mitigating systematic biases in LLM judges using security-focused benchmarks (Purple Llama, CyberSecEval).<br>
-      • Designing a security-aware LLM judge via prompt engineering, in-context learning, and controlled fine-tuning.<br>
-      • Curating cybersecurity datasets to stress-test evaluation robustness through large-scale GPU experimentation.
+      • Curated a 162K-pair cybersecurity QA benchmark spanning penetration testing, malware analysis, and vulnerability assessment, and annotated 529 gold-standard ranking labels to measure LLM judge alignment against human expert judgment via the JudgeLM evaluation pipeline — including checkpoint loading, prompt optimization, and positional bias analysis.<br>
+      • Fine-tuned LLaMA-3.2-3B-Instruct using LoRA on cybersecurity ranking data, achieving improved alignment and consistency over the base model as measured against human-annotated gold labels.
     </p>
   </div>
 
   <div class="exp-item">
-    <h3>Software Development Intern</h3>
-    <h4>InLighn Tech</h4>
-    <span class="meta">Jul 2025 – Oct 2025</span>
-    <p>Built and deployed full-stack applications with React, Node.js/Express, and MongoDB. Implemented secure JWT/session-based authentication and set up CI/CD pipelines on AWS.</p>
+    <h3>Full Stack Intern</h3>
+    <h4>InLighnX Global Pvt. Ltd</h4>
+    <span class="meta">Jul 2025 – Oct 2025 · Remote</span>
+    <p>
+      • Built and deployed a MERN stack e-commerce application, developing React frontend interfaces and Node.js/Express backend APIs.<br>
+      • Implemented RESTful APIs for CRUD operations, user authentication, and PayPal payment processing.
+    </p>
   </div>
 
   <div class="exp-item">
@@ -422,46 +427,17 @@ footer{
   <h2>Projects</h2>
   <div class="cards">
 
-    <!-- VaultFlow -->
+    <!-- VaultFlow: replace .mock-name below with <img src="images/vaultflow.png" alt="VaultFlow"> once the screenshot is added -->
     <article class="card proj-card">
-      <div class="mock">
-        <svg viewBox="0 0 800 390" xmlns="http://www.w3.org/2000/svg">
-          <rect width="800" height="390" fill="#fffaed"/>
-          <text x="400" y="26" fill="#d97706" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Microservices Architecture</text>
-          <rect x="285" y="38" width="230" height="40" rx="8" fill="#fff" stroke="#d97706" stroke-width="2"/>
-          <text x="400" y="63" fill="#d97706" font-size="12" font-family="Inter" text-anchor="middle" font-weight="600">Next.js 14 Dashboard</text>
-          <line x1="400" y1="78" x2="400" y2="118" stroke="#d97706" stroke-width="1.5"/>
-          <polygon points="394,115 400,123 406,115" fill="#d97706"/>
-          <rect x="285" y="120" width="230" height="40" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
-          <text x="400" y="145" fill="#b45309" font-size="12" font-family="Inter" text-anchor="middle" font-weight="600">API Gateway · JWT · Rate-limit</text>
-          <line x1="350" y1="160" x2="100" y2="215" stroke="#d97706" stroke-width="1" opacity=".45"/>
-          <line x1="370" y1="160" x2="280" y2="215" stroke="#d97706" stroke-width="1" opacity=".45"/>
-          <line x1="430" y1="160" x2="520" y2="215" stroke="#d97706" stroke-width="1" opacity=".45"/>
-          <line x1="450" y1="160" x2="700" y2="215" stroke="#d97706" stroke-width="1" opacity=".45"/>
-          <rect x="20" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
-          <text x="100" y="240" fill="#b45309" font-size="11" font-family="Inter" text-anchor="middle">Accounts</text>
-          <rect x="200" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
-          <text x="280" y="240" fill="#b45309" font-size="11" font-family="Inter" text-anchor="middle">Transactions</text>
-          <rect x="440" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
-          <text x="520" y="240" fill="#b45309" font-size="11" font-family="Inter" text-anchor="middle">Fraud Detection</text>
-          <rect x="620" y="215" width="160" height="40" rx="8" fill="#fff" stroke="#fbbf24" stroke-width="1.5"/>
-          <text x="700" y="240" fill="#b45309" font-size="11" font-family="Inter" text-anchor="middle">Notifications</text>
-          <rect x="155" y="310" width="490" height="36" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
-          <text x="400" y="333" fill="#b45309" font-size="12" font-family="Inter" text-anchor="middle" font-weight="700">Kafka Event Bus</text>
-          <line x1="280" y1="255" x2="280" y2="310" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>
-          <line x1="520" y1="255" x2="520" y2="310" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>
-          <line x1="700" y1="255" x2="610" y2="310" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3" opacity=".6"/>
-          <rect x="20" y="358" width="170" height="24" rx="12" fill="#d97706"/>
-          <text x="105" y="374" fill="#fff" font-size="10" font-family="Inter" font-weight="700" text-anchor="middle">AI · Groq LLaMA-3.3-70b</text>
-          <rect x="610" y="358" width="170" height="24" rx="12" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
-          <text x="695" y="374" fill="#b45309" font-size="10" font-family="Inter" text-anchor="middle">Resilience4j · Circuit Breaker</text>
-        </svg>
-      </div>
+      <div class="mock"><div class="mock-name">VaultFlow</div></div>
       <div class="proj-body">
       <span class="badge">Live Demo</span>
-      <h3>VaultFlow — Banking Microservices Platform</h3>
-      <p>Production-grade banking platform with Spring Boot 4 microservices (API Gateway, Accounts, Transactions, Fraud, Notifications) over Kafka. JWT auth with refresh tokens, Resilience4j circuit breakers, AI fraud explanation via Groq/LLaMA-3.3-70b, and a Next.js 14 dashboard.</p>
-      <div class="tags"><span class="tag">Spring Boot</span><span class="tag">Kafka</span><span class="tag">JWT</span><span class="tag">Next.js</span><span class="tag">Groq LLaMA-3.3</span></div>
+      <h3>VaultFlow — Banking Platform</h3>
+      <p>
+        • Architected a production-grade banking platform with 5 decoupled Spring Boot 4 microservices and a Next.js 14 frontend, featuring event-driven fraud detection, AI-powered transaction categorization, and a full observability stack (Prometheus, Grafana, Loki, Zipkin) deployed at $0/month.<br>
+        • Engineered JWT auth with refresh token rotation and idempotency-key deduplication through Spring Cloud Gateway, with Kafka-driven fraud and notification pipelines validated via Gatling load tests — 100% success rate, 89ms mean latency, and sub-13ms read response times across 6 banking operations.
+      </p>
+      <div class="tags"><span class="tag">Spring Boot 4</span><span class="tag">Next.js 14</span><span class="tag">PostgreSQL</span><span class="tag">Kafka</span><span class="tag">Resilience4j</span><span class="tag">Observability Stack</span></div>
       <div class="plinks">
         <a href="https://vaultflow-ui.vercel.app" target="_blank" rel="noopener">Live Demo →</a>
         <a href="https://github.com/varshiniv1/VaultFlow" target="_blank" rel="noopener">GitHub</a>
@@ -469,69 +445,17 @@ footer{
       </div>
     </article>
 
-    <!-- CampusTix -->
+    <!-- CampusTix: replace .mock-name below with <img src="images/campustix.png" alt="CampusTix"> once the screenshot is added -->
     <article class="card proj-card">
-      <div class="mock">
-        <svg viewBox="0 0 800 390" xmlns="http://www.w3.org/2000/svg">
-          <rect width="800" height="390" fill="#fffaed"/>
-          <rect x="0" y="0" width="800" height="40" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <text x="28" y="25" fill="#d97706" font-size="14" font-family="Inter" font-weight="800">CampusTix</text>
-          <rect x="640" y="8" width="112" height="24" rx="6" fill="#d97706"/>
-          <text x="696" y="24" fill="#fff" font-size="10" font-family="Inter" font-weight="700" text-anchor="middle">Browse Events</text>
-          <rect x="28" y="55" width="210" height="128" rx="10" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <rect x="28" y="55" width="210" height="56" rx="10" fill="#fffbeb"/>
-          <rect x="28" y="93" width="210" height="18" fill="#fffbeb"/>
-          <text x="133" y="128" fill="#292524" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Tech Conference 2026</text>
-          <text x="133" y="145" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Jun 15 · 12 seats left</text>
-          <rect x="50" y="158" width="78" height="17" rx="8" fill="#d97706"/>
-          <text x="89" y="170" fill="#fff" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">Book Now</text>
-          <rect x="258" y="55" width="210" height="128" rx="10" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <rect x="258" y="55" width="210" height="56" rx="10" fill="#fef3c7"/>
-          <rect x="258" y="93" width="210" height="18" fill="#fef3c7"/>
-          <text x="363" y="128" fill="#292524" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Spring Hackathon</text>
-          <text x="363" y="145" fill="#ef4444" font-size="9" font-family="Inter" text-anchor="middle" font-weight="600">SOLD OUT · Join Waitlist</text>
-          <rect x="278" y="158" width="90" height="17" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
-          <text x="323" y="170" fill="#d97706" font-size="9" font-family="Inter" text-anchor="middle">Join Waitlist</text>
-          <rect x="526" y="46" width="242" height="330" rx="12" fill="#fff" stroke="#d97706" stroke-width="2"/>
-          <text x="647" y="74" fill="#d97706" font-size="11" font-family="Inter" text-anchor="middle" font-weight="700">YOUR TICKET</text>
-          <line x1="526" y1="85" x2="768" y2="85" stroke="#ede9e6" stroke-width="1.5" stroke-dasharray="6,4"/>
-          <rect x="583" y="100" width="128" height="128" rx="4" fill="#fffaed" stroke="#ede9e6" stroke-width="1"/>
-          <rect x="591" y="108" width="27" height="27" rx="3" fill="none" stroke="#d97706" stroke-width="3"/>
-          <rect x="597" y="114" width="15" height="15" fill="#d97706"/>
-          <rect x="676" y="108" width="27" height="27" rx="3" fill="none" stroke="#d97706" stroke-width="3"/>
-          <rect x="682" y="114" width="15" height="15" fill="#d97706"/>
-          <rect x="591" y="193" width="27" height="27" rx="3" fill="none" stroke="#d97706" stroke-width="3"/>
-          <rect x="597" y="199" width="15" height="15" fill="#d97706"/>
-          <rect x="632" y="108" width="8" height="8" fill="#d97706"/>
-          <rect x="646" y="108" width="8" height="8" fill="#d97706"/>
-          <rect x="632" y="122" width="8" height="8" fill="#d97706"/>
-          <rect x="646" y="122" width="16" height="8" fill="#d97706"/>
-          <rect x="632" y="136" width="8" height="8" fill="#d97706"/>
-          <rect x="632" y="150" width="16" height="8" fill="#d97706"/>
-          <rect x="652" y="150" width="8" height="8" fill="#d97706"/>
-          <text x="647" y="250" fill="#292524" font-size="10" font-family="Inter" text-anchor="middle">#TKT-7823 · Seat B4</text>
-          <text x="647" y="266" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Tech Conference 2026</text>
-          <line x1="526" y1="280" x2="768" y2="280" stroke="#ede9e6" stroke-width="1.5" stroke-dasharray="6,4"/>
-          <text x="647" y="300" fill="#d97706" font-size="9" font-family="Inter" text-anchor="middle" font-weight="600">Scan to verify · PDF download</text>
-          <rect x="556" y="316" width="182" height="22" rx="11" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <text x="647" y="331" fill="#b45309" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle">Deployed · Railway</text>
-          <rect x="28" y="200" width="118" height="19" rx="9" fill="#fffbeb"/>
-          <text x="87" y="213" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle">WebSocket seats</text>
-          <rect x="158" y="200" width="88" height="19" rx="9" fill="#fffbeb"/>
-          <text x="202" y="213" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle">AI Chatbot</text>
-          <rect x="28" y="226" width="92" height="19" rx="9" fill="#fffbeb"/>
-          <text x="74" y="239" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle">Email reminders</text>
-          <rect x="132" y="226" width="78" height="19" rx="9" fill="#fffbeb"/>
-          <text x="171" y="239" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle">Waitlist</text>
-          <rect x="28" y="252" width="88" height="19" rx="9" fill="#fffbeb"/>
-          <text x="72" y="265" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle">Redis cache</text>
-        </svg>
-      </div>
+      <div class="mock"><div class="mock-name">CampusTix</div></div>
       <div class="proj-body">
       <span class="badge">Live Demo</span>
       <h3>CampusTix — Event Ticketing Platform</h3>
-      <p>Full-stack ticketing platform deployed on Railway. Real-time seat booking via WebSocket with optimistic locking, AI event chatbot (LLaMA 3.1 via Groq), QR + PDF tickets, automated 24h email reminders, Redis rate limiting, and waitlist with email notifications. Spring Boot 4, PostgreSQL, Redis.</p>
-      <div class="tags"><span class="tag">WebSocket</span><span class="tag">Redis</span><span class="tag">PostgreSQL</span><span class="tag">Groq LLaMA-3.1</span><span class="tag">Railway</span></div>
+      <p>
+        • Built concurrent seat-booking with optimistic locking (@Version), validated zero duplicate bookings under 500 concurrent users via JUnit and CountDownLatch, and load-tested with k6 achieving P95 latency of 93ms at 1,306 req/s with zero 5xx errors across 260K requests.<br>
+        • Implemented async booking via @Async and STOMP WebSocket push returning 202 in ~4ms median, with Redis rate limiting, Resilience4j circuit breaker isolating AI faults across 4 fault-injection scenarios, and Micrometer instrumentation deployed via multi-stage Docker on Railway.
+      </p>
+      <div class="tags"><span class="tag">Java 23</span><span class="tag">Spring Boot 4</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">WebSocket</span><span class="tag">Docker</span></div>
       <div class="plinks">
         <a href="https://campustix-production.up.railway.app" target="_blank" rel="noopener">Live Demo →</a>
         <a href="https://github.com/varshiniv1/CampusTix" target="_blank" rel="noopener">GitHub</a>
@@ -539,58 +463,9 @@ footer{
       </div>
     </article>
 
-    <!-- SwapSkill -->
+    <!-- SwapSkill: replace .mock-name below with <img src="images/swapskill.png" alt="SwapSkill"> once the screenshot is added -->
     <article class="card proj-card">
-      <div class="mock">
-        <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="800" height="300" fill="#fffaed"/>
-          <!-- Navbar -->
-          <rect x="0" y="0" width="800" height="38" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <text x="28" y="24" fill="#d97706" font-size="15" font-family="Inter" font-weight="800">SwapSkill</text>
-          <text x="160" y="24" fill="#78716c" font-size="10" font-family="Inter">Explore</text>
-          <text x="210" y="24" fill="#78716c" font-size="10" font-family="Inter">My Swaps</text>
-          <text x="264" y="24" fill="#78716c" font-size="10" font-family="Inter">Community</text>
-          <rect x="692" y="10" width="88" height="20" rx="10" fill="#d97706"/>
-          <text x="736" y="24" fill="#fff" font-size="9" font-family="Inter" font-weight="700" text-anchor="middle">+ Propose Swap</text>
-          <!-- Left user card -->
-          <rect x="40" y="54" width="190" height="190" rx="10" fill="#fff" stroke="#ede9e6" stroke-width="1.2"/>
-          <circle cx="135" cy="96" r="22" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
-          <text x="135" y="102" fill="#d97706" font-size="18" font-family="Inter" text-anchor="middle" font-weight="700">A</text>
-          <text x="135" y="136" fill="#292524" font-size="11" font-family="Inter" text-anchor="middle" font-weight="700">Alex Chen</text>
-          <rect x="75" y="144" width="120" height="18" rx="9" fill="#fffbeb"/>
-          <text x="135" y="157" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle" font-weight="600">Web Development</text>
-          <text x="135" y="180" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Needs: Logo Design</text>
-          <!-- Stars -->
-          <text x="100" y="218" fill="#d97706" font-size="11" font-family="Inter">★★★★★</text>
-          <text x="174" y="218" fill="#78716c" font-size="9" font-family="Inter">(12)</text>
-          <!-- Center swap arrows -->
-          <rect x="260" y="115" width="120" height="62" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
-          <text x="320" y="140" fill="#d97706" font-size="20" font-family="Inter" text-anchor="middle">⇄</text>
-          <text x="320" y="164" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">NEGOTIATING</text>
-          <!-- Right user card -->
-          <rect x="410" y="54" width="190" height="190" rx="10" fill="#fff" stroke="#ede9e6" stroke-width="1.2"/>
-          <circle cx="505" cy="96" r="22" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
-          <text x="505" y="102" fill="#d97706" font-size="18" font-family="Inter" text-anchor="middle" font-weight="700">M</text>
-          <text x="505" y="136" fill="#292524" font-size="11" font-family="Inter" text-anchor="middle" font-weight="700">Maya Patel</text>
-          <rect x="445" y="144" width="120" height="18" rx="9" fill="#fffbeb"/>
-          <text x="505" y="157" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle" font-weight="600">Logo Design</text>
-          <text x="505" y="180" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Needs: Landing Page</text>
-          <text x="470" y="218" fill="#d97706" font-size="11" font-family="Inter">★★★★☆</text>
-          <text x="544" y="218" fill="#78716c" font-size="9" font-family="Inter">(8)</text>
-          <!-- Lifecycle status bar -->
-          <rect x="628" y="54" width="138" height="190" rx="10" fill="#fff" stroke="#ede9e6" stroke-width="1.2"/>
-          <text x="697" y="78" fill="#292524" font-size="10" font-family="Inter" text-anchor="middle" font-weight="700">Swap Lifecycle</text>
-          <rect x="648" y="90" width="98" height="16" rx="4" fill="#d97706"/>
-          <text x="697" y="102" fill="#fff" font-size="8" font-family="Inter" text-anchor="middle" font-weight="700">✓ Proposed</text>
-          <rect x="648" y="114" width="98" height="16" rx="4" fill="#d97706"/>
-          <text x="697" y="126" fill="#fff" font-size="8" font-family="Inter" text-anchor="middle" font-weight="700">✓ Negotiated</text>
-          <rect x="648" y="138" width="98" height="16" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <text x="697" y="150" fill="#b45309" font-size="8" font-family="Inter" text-anchor="middle" font-weight="700">→ Deliver</text>
-          <rect x="648" y="162" width="98" height="16" rx="4" fill="#ede9e6"/>
-          <text x="697" y="174" fill="#78716c" font-size="8" font-family="Inter" text-anchor="middle">Review</text>
-          <text x="697" y="224" fill="#d97706" font-size="9" font-family="Inter" text-anchor="middle" font-weight="600">MongoDB · JWT · MERN</text>
-        </svg>
-      </div>
+      <div class="mock"><div class="mock-name">SwapSkill</div></div>
       <div class="proj-body">
       <h3>SwapSkill</h3>
       <p>Full-stack skill-exchange platform where users trade expertise instead of money. Features JWT authentication, a full swap lifecycle (propose → negotiate → deliver → review), real-time reputation updates, and free deployment on Vercel, Render, and MongoDB Atlas.</p>
@@ -602,76 +477,9 @@ footer{
       </div>
     </article>
 
-    <!-- Support Bot -->
+    <!-- Support Bot: replace .mock-name below with <img src="images/support-bot.png" alt="Support Bot"> once the screenshot is added -->
     <article class="card proj-card">
-      <div class="mock">
-        <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="800" height="300" fill="#fffaed"/>
-          <!-- Left: Knowledge Base -->
-          <rect x="20" y="20" width="158" height="260" rx="10" fill="#fff" stroke="#ede9e6" stroke-width="1.2"/>
-          <text x="99" y="44" fill="#d97706" font-size="10" font-family="Inter" text-anchor="middle" font-weight="700">Knowledge Base</text>
-          <rect x="34" y="56" width="130" height="30" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <text x="64" y="75" fill="#d97706" font-size="13" font-family="Inter">📄</text>
-          <text x="82" y="76" fill="#b45309" font-size="9" font-family="Inter" font-weight="600">PDF (PyMuPDF)</text>
-          <rect x="34" y="96" width="130" height="30" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <text x="64" y="115" fill="#d97706" font-size="13" font-family="Inter">🌐</text>
-          <text x="82" y="116" fill="#b45309" font-size="9" font-family="Inter" font-weight="600">URL (trafilatura)</text>
-          <rect x="34" y="136" width="130" height="30" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <text x="64" y="155" fill="#d97706" font-size="13" font-family="Inter">📝</text>
-          <text x="82" y="156" fill="#b45309" font-size="9" font-family="Inter" font-weight="600">Markdown</text>
-          <rect x="34" y="182" width="130" height="44" rx="6" fill="#fffbeb" stroke="#fbbf24" stroke-width="1.5"/>
-          <text x="99" y="201" fill="#b45309" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">Sentence Chunker</text>
-          <text x="99" y="217" fill="#78716c" font-size="8" font-family="Inter" text-anchor="middle">512 chars · 64 overlap</text>
-          <text x="99" y="258" fill="#78716c" font-size="8" font-family="Inter" text-anchor="middle">fastembed / ONNX</text>
-          <!-- Arrow left → center -->
-          <path d="M180,150 L208,150" stroke="#d97706" stroke-width="2" fill="none"/>
-          <polygon points="204,145 212,150 204,155" fill="#d97706"/>
-          <!-- Center: Chat -->
-          <rect x="213" y="20" width="370" height="260" rx="10" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
-          <rect x="213" y="20" width="370" height="34" rx="10" fill="#fffbeb"/>
-          <rect x="213" y="42" width="370" height="12" fill="#fffbeb"/>
-          <text x="398" y="42" fill="#d97706" font-size="11" font-family="Inter" text-anchor="middle" font-weight="700">Support Bot</text>
-          <!-- User bubble -->
-          <rect x="298" y="68" width="264" height="38" rx="8" fill="#d97706"/>
-          <text x="430" y="84" fill="#fff" font-size="9" font-family="Inter" text-anchor="middle" font-weight="600">How do I reset my password?</text>
-          <text x="430" y="99" fill="rgba(255,255,255,.75)" font-size="8" font-family="Inter" text-anchor="middle">Error code: AUTH_4021</text>
-          <!-- Bot bubble -->
-          <rect x="226" y="120" width="276" height="62" rx="8" fill="#fffbeb" stroke="#ede9e6" stroke-width="1"/>
-          <text x="364" y="137" fill="#292524" font-size="9" font-family="Inter" text-anchor="middle" font-weight="600">Based on your docs (3 sources found):</text>
-          <text x="364" y="152" fill="#78716c" font-size="8" font-family="Inter" text-anchor="middle">Go to Settings → Security → Reset Password.</text>
-          <text x="364" y="167" fill="#78716c" font-size="8" font-family="Inter" text-anchor="middle">AUTH_4021 lets you bypass 2FA for this reset.</text>
-          <!-- Follow-up chips -->
-          <text x="226" y="204" fill="#78716c" font-size="8" font-family="Inter">Suggested:</text>
-          <rect x="226" y="210" width="94" height="16" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <text x="273" y="222" fill="#b45309" font-size="7.5" font-family="Inter" text-anchor="middle">What is 2FA?</text>
-          <rect x="328" y="210" width="120" height="16" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <text x="388" y="222" fill="#b45309" font-size="7.5" font-family="Inter" text-anchor="middle">View account settings</text>
-          <!-- Input bar -->
-          <rect x="226" y="248" width="340" height="22" rx="11" fill="#fffaed" stroke="#ede9e6" stroke-width="1"/>
-          <text x="378" y="263" fill="#78716c" font-size="8" font-family="Inter" text-anchor="middle">Ask anything from your docs...</text>
-          <!-- Arrow center → right -->
-          <path d="M587,150 L612,150" stroke="#d97706" stroke-width="2" fill="none"/>
-          <polygon points="608,145 616,150 608,155" fill="#d97706"/>
-          <!-- Right: Hybrid Retrieval -->
-          <rect x="618" y="20" width="162" height="260" rx="10" fill="#fff" stroke="#ede9e6" stroke-width="1.2"/>
-          <text x="699" y="44" fill="#d97706" font-size="10" font-family="Inter" text-anchor="middle" font-weight="700">Hybrid Retrieval</text>
-          <rect x="632" y="56" width="134" height="44" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
-          <text x="699" y="74" fill="#d97706" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">pgvector HNSW</text>
-          <text x="699" y="90" fill="#78716c" font-size="8" font-family="Inter" text-anchor="middle">Cosine similarity · 70%</text>
-          <text x="699" y="118" fill="#d97706" font-size="14" font-family="Inter" text-anchor="middle" font-weight="700">+</text>
-          <rect x="632" y="126" width="134" height="44" rx="6" fill="#fffbeb" stroke="#fbbf24" stroke-width="1.5"/>
-          <text x="699" y="144" fill="#d97706" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">BM25 (tsvector)</text>
-          <text x="699" y="160" fill="#78716c" font-size="8" font-family="Inter" text-anchor="middle">Keyword ranking · 30%</text>
-          <text x="699" y="188" fill="#d97706" font-size="12" font-family="Inter" text-anchor="middle" font-weight="700">=</text>
-          <rect x="632" y="196" width="134" height="36" rx="6" fill="#d97706"/>
-          <text x="699" y="212" fill="#fff" font-size="9" font-family="Inter" text-anchor="middle" font-weight="700">Fused Score</text>
-          <text x="699" y="225" fill="rgba(255,255,255,.8)" font-size="8" font-family="Inter" text-anchor="middle">Single DB RPC call</text>
-          <rect x="632" y="248" width="60" height="16" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <text x="662" y="260" fill="#b45309" font-size="7.5" font-family="Inter" text-anchor="middle">Render</text>
-          <rect x="700" y="248" width="60" height="16" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <text x="730" y="260" fill="#b45309" font-size="7.5" font-family="Inter" text-anchor="middle">Vercel</text>
-        </svg>
-      </div>
+      <div class="mock"><div class="mock-name">Support Bot</div></div>
       <div class="proj-body">
       <span class="badge">Live Demo</span>
       <h3>Support Bot — RAG Knowledge Base Chatbot</h3>
@@ -684,38 +492,9 @@ footer{
       </div>
     </article>
 
-    <!-- SmartSpender -->
+    <!-- SmartSpender: replace .mock-name below with <img src="images/smartspender.png" alt="SmartSpender"> once the screenshot is added -->
     <article class="card proj-card">
-      <div class="mock">
-        <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-          <rect width="800" height="300" fill="#fffaed"/>
-          <rect x="34" y="24" width="210" height="96" rx="12" fill="#fff" stroke="#ede9e6" stroke-width="1.5"/>
-          <text x="139" y="60" fill="#78716c" font-size="11" font-family="Inter" text-anchor="middle">Total Balance</text>
-          <text x="139" y="96" fill="#d97706" font-size="24" font-family="Inter" font-weight="800" text-anchor="middle">$4,820</text>
-          <rect x="270" y="24" width="136" height="96" rx="12" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <text x="338" y="60" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">Income</text>
-          <text x="338" y="96" fill="#10b981" font-size="18" font-family="Inter" font-weight="700" text-anchor="middle">+$6,200</text>
-          <rect x="424" y="24" width="136" height="96" rx="12" fill="#fff" stroke="#ede9e6" stroke-width="1"/>
-          <text x="492" y="60" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">Expenses</text>
-          <text x="492" y="96" fill="#ef4444" font-size="18" font-family="Inter" font-weight="700" text-anchor="middle">-$1,380</text>
-          <text x="185" y="152" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">Monthly Spending</text>
-          <rect x="72" y="238" width="28" height="50" rx="3" fill="#d97706" opacity=".4"/>
-          <rect x="120" y="200" width="28" height="88" rx="3" fill="#d97706" opacity=".6"/>
-          <rect x="168" y="174" width="28" height="114" rx="3" fill="#d97706"/>
-          <rect x="216" y="212" width="28" height="76" rx="3" fill="#d97706" opacity=".55"/>
-          <rect x="264" y="186" width="28" height="102" rx="3" fill="#d97706" opacity=".8"/>
-          <text x="86" y="296" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Jan</text>
-          <text x="134" y="296" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Feb</text>
-          <text x="182" y="296" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Mar</text>
-          <text x="230" y="296" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">Apr</text>
-          <text x="278" y="296" fill="#78716c" font-size="9" font-family="Inter" text-anchor="middle">May</text>
-          <circle cx="580" cy="195" r="86" fill="none" stroke="#d97706" stroke-width="28" stroke-dasharray="180 361" stroke-dashoffset="0" opacity=".9"/>
-          <circle cx="580" cy="195" r="86" fill="none" stroke="#fbbf24" stroke-width="28" stroke-dasharray="120 361" stroke-dashoffset="-180" opacity=".7"/>
-          <circle cx="580" cy="195" r="86" fill="none" stroke="#fffbeb" stroke-width="28" stroke-dasharray="61 361" stroke-dashoffset="-300"/>
-          <text x="580" y="190" fill="#d97706" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Budget</text>
-          <text x="580" y="208" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">by category</text>
-        </svg>
-      </div>
+      <div class="mock"><div class="mock-name">SmartSpender</div></div>
       <div class="proj-body">
       <h3>SmartSpender — Personal Finance Tracker</h3>
       <p>Full-stack finance tracker with React + Node.js/Express. Income and expense logging, category-based budgeting, and interactive Chart.js visualizations (bar + donut). JWT auth and MongoDB persistence.</p>
@@ -726,57 +505,16 @@ footer{
       </div>
     </article>
 
-    <!-- IMDB DB Engine -->
+    <!-- Disk-based Database Engine: replace .mock-name below with <img src="images/db-engine.png" alt="Disk-based Database Engine"> once the screenshot is added -->
     <article class="card proj-card full">
-      <div class="mock">
-        <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
-          <rect width="900" height="280" fill="#fffaed"/>
-          <text x="115" y="24" fill="#d97706" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Storage</text>
-          <g transform="translate(40,40)">
-            <ellipse cx="75" cy="0" rx="75" ry="15" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
-            <rect x="0" y="0" width="150" height="135" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
-            <ellipse cx="75" cy="135" rx="75" ry="15" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
-            <line x1="15" y1="44" x2="135" y2="44" stroke="#fffbeb" stroke-width="5"/>
-            <line x1="15" y1="78" x2="135" y2="78" stroke="#fffbeb" stroke-width="5"/>
-            <line x1="15" y1="112" x2="135" y2="112" stroke="#fffbeb" stroke-width="5"/>
-            <text x="75" y="164" fill="#d97706" font-size="10" font-family="Inter" text-anchor="middle" font-weight="600">Buffer Manager</text>
-            <text x="75" y="180" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">LRU Eviction</text>
-          </g>
-          <path d="M192,110 C235,110 255,110 288,110" stroke="#d97706" stroke-width="2.5" fill="none"/>
-          <polygon points="284,104 294,110 284,116" fill="#d97706"/>
-          <text x="430" y="24" fill="#d97706" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">B+-Tree Index</text>
-          <rect x="400" y="38" width="60" height="28" rx="5" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
-          <text x="430" y="57" fill="#d97706" font-size="10" font-family="Inter" text-anchor="middle" font-weight="600">Root</text>
-          <rect x="320" y="94" width="60" height="28" rx="5" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
-          <text x="350" y="113" fill="#d97706" font-size="10" font-family="Inter" text-anchor="middle">Node</text>
-          <rect x="480" y="94" width="60" height="28" rx="5" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
-          <text x="510" y="113" fill="#d97706" font-size="10" font-family="Inter" text-anchor="middle">Node</text>
-          <line x1="430" y1="66" x2="350" y2="94" stroke="#d97706" stroke-width="1.5"/>
-          <line x1="430" y1="66" x2="510" y2="94" stroke="#d97706" stroke-width="1.5"/>
-          <rect x="295" y="152" width="48" height="22" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <rect x="350" y="152" width="48" height="22" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <rect x="453" y="152" width="48" height="22" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <rect x="508" y="152" width="48" height="22" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
-          <line x1="350" y1="122" x2="319" y2="152" stroke="#d97706" stroke-width="1" opacity=".6"/>
-          <line x1="350" y1="122" x2="374" y2="152" stroke="#d97706" stroke-width="1" opacity=".6"/>
-          <line x1="510" y1="122" x2="477" y2="152" stroke="#d97706" stroke-width="1" opacity=".6"/>
-          <line x1="510" y1="122" x2="532" y2="152" stroke="#d97706" stroke-width="1" opacity=".6"/>
-          <path d="M563,110 C606,110 626,110 660,110" stroke="#d97706" stroke-width="2.5" fill="none"/>
-          <polygon points="656,104 666,110 656,116" fill="#d97706"/>
-          <text x="760" y="24" fill="#d97706" font-size="13" font-family="Inter" text-anchor="middle" font-weight="700">Query Executor</text>
-          <rect x="682" y="40" width="156" height="76" rx="8" fill="#fff" stroke="#d97706" stroke-width="1.5"/>
-          <text x="760" y="78" fill="#78716c" font-size="10" font-family="Inter" text-anchor="middle">Range Scan</text>
-          <text x="760" y="96" fill="#d97706" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">titles A → Z</text>
-          <rect x="660" y="192" width="200" height="46" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
-          <text x="760" y="214" fill="#b45309" font-size="11" font-family="Inter" text-anchor="middle" font-weight="600">Validated against</text>
-          <text x="760" y="230" fill="#b45309" font-size="11" font-family="Inter" text-anchor="middle">PostgreSQL</text>
-          <line x1="760" y1="116" x2="760" y2="192" stroke="#d97706" stroke-width="1.5" stroke-dasharray="5,3"/>
-        </svg>
-      </div>
+      <div class="mock"><div class="mock-name">Disk-based Database Engine</div></div>
       <div class="proj-body">
-      <h3>IMDB Data Management &amp; Query System</h3>
-      <p>Custom disk-based database engine in Java over the IMDB dataset. Built a Buffer Manager (LRU eviction), B+-Tree index for efficient range scans, and a query executor processing millions of records. Correctness validated against PostgreSQL — demonstrating deep understanding of database internals.</p>
-      <div class="tags"><span class="tag">Java</span><span class="tag">B+-Tree</span><span class="tag">Buffer Management</span><span class="tag">PostgreSQL</span></div>
+      <h3>Disk-based Database Engine</h3>
+      <p>
+        • Implemented Page and Row serialization, LRU buffer pool management with disk persistence via RandomAccessFile, and a BTreeLeafNode with point and range search — achieving 300–3000× speedup over full table scans on IMDB dataset queries.<br>
+        • Assembled a pipelined query executor with CLI interface supporting Block Nested Loop Join across Movies, WorkedOn, and People relations, as part of a 4-person team.
+      </p>
+      <div class="tags"><span class="tag">Java</span><span class="tag">B+ Tree</span><span class="tag">Buffer Management</span><span class="tag">BNLJ</span></div>
       <div class="plinks">
         <a href="https://github.com/varshiniv1/Disk-based-Database-Engine" target="_blank" rel="noopener">GitHub</a>
       </div>
